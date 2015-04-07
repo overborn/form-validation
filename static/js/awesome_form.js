@@ -1,5 +1,5 @@
 jQuery(function($){
-    $("button[type='submit']").prop("disabled", true);
+    // $("button[type='submit']").prop("disabled", true);
     $('[data-toggle="tooltip"]').tooltip({
       placement : 'top'
     });
