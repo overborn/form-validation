@@ -20,7 +20,7 @@ jQuery(function($){
                     $this.parent()
                         .removeClass('has-success has-error')
                         .addClass('has-success');
-                    if ($('.has-success').length==4){
+                    if ($('.has-error').length==0){
                       $("button[type='submit']").prop("disabled", false);
                     }
                 } else {
@@ -39,7 +39,7 @@ jQuery(function($){
           $(this).parent()
               .removeClass('has-success has-error')
               .addClass('has-success');
-          if ($('.has-success').length==4){
+          if ($('.has-error').length==0){
             $("button[type='submit']").prop("disabled", false);
           }
         } else {
