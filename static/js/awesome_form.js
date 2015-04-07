@@ -1,4 +1,5 @@
 jQuery(function($){
+    $("button[type='submit']").prop("disabled", true);
     $('[data-toggle="tooltip"]').tooltip({
       placement : 'top'
     });
@@ -7,6 +8,7 @@ jQuery(function($){
               'credit_card_expiry',
               'credit_card_cvc',
               ]
+
 
     $.each( fields, function (index, value) {
         $('input.'+value).formance('format_'+value);
@@ -18,11 +20,15 @@ jQuery(function($){
                     $this.parent()
                         .removeClass('has-success has-error')
                         .addClass('has-success');
+                    if ($('.has-success').length==4){
+                      $("button[type='submit']").prop("disabled", false);
+                    }
                 } else {
                     $this.parent()
                         .removeClass('has-success has-error')
                         .addClass('has-error');       
                     $this.tooltip();
+                    $("button[type='submit']").prop("disabled", true);
                 }
             }
         }(value));
@@ -33,12 +39,16 @@ jQuery(function($){
           $(this).parent()
               .removeClass('has-success has-error')
               .addClass('has-success');
+          if ($('.has-success').length==4){
+            $("button[type='submit']").prop("disabled", false);
+          }
         } else {
           $(this).parent()
               .removeClass('has-success has-error')
               .addClass('has-error');
-          $(this).tooltip();  
+          $(this).tooltip();
+          $("button[type='submit']").prop("disabled", true);  
         }
     });
-
+    
 });
