@@ -1,6 +1,6 @@
 jQuery(function($){
     $('[data-toggle="tooltip"]').tooltip({
-      placement : 'right'
+      placement : 'bottom'
     });
     fields = [
               'credit_card_number',
